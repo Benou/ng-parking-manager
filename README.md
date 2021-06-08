@@ -2,6 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.2.
 
+## Let's try component-store
+<img width="718" alt="Capture d’écran 2021-06-08 à 19 10 12" src="https://user-images.githubusercontent.com/1434222/121228855-8dce8d00-c88d-11eb-8b50-35cf738542c2.png">
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
