@@ -1,0 +1,27 @@
+$parking-gutter-size: 16px;
+
+.parking-lot {
+  padding: $parking-gutter-size;
+
+  & > * {
+    margin-bottom: $parking-gutter-size;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+
+    & > * {
+      flex: 1;
+      margin-right: $parking-gutter-size;
+      margin-bottom: 0;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

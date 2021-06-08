@@ -1,0 +1,26 @@
+<mat-card>
+  <mat-card-content>
+    <form [formGroup]="form"
+          (ngSubmit)="addCarByPlate()">
+      <mat-form-field>
+        <mat-label>Plate</mat-label>
+        <input matInput
+               placeholder="Ex: 2FMDK3, 1GYS4C, 1GKS1E,1G6AS5"
+               formControlName="plate"
+               required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Shortcuts</mat-label>
+        <mat-select [value]="plateControl.value"
+                    (selectionChange)="selectPlate($event)">
+          <mat-option *ngFor="let plate of plates" [value]="plate">
+            {{ plate }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-raised-button [disabled]="pending || form.invalid">
+        {{ pending ? 'Loading...' : 'Add car' }}
+      </button>
+    </form>
+  </mat-card-content>
+</mat-card>

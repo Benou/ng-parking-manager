@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-card-content>
+    <table mat-table [dataSource]="cars" *ngIf="cars && cars.length; else noCars">
+
+      <!-- PLATE COLUMN -->
+      <ng-container matColumnDef="plate">
+        <th mat-header-cell *matHeaderCellDef>Plate</th>
+        <td mat-cell *matCellDef="let car">{{ car.plate }}</td>
+      </ng-container>
+
+      <!-- BRAND COLUMN -->
+      <ng-container matColumnDef="brand" sticky>
+        <th mat-header-cell *matHeaderCellDef>Brand</th>
+        <td mat-cell *matCellDef="let car">{{ car.brand }}</td>
+      </ng-container>
+
+      <!-- MODEL COLUMN -->
+      <ng-container matColumnDef="model">
+        <th mat-header-cell *matHeaderCellDef>Model</th>
+        <td mat-cell *matCellDef="let car">{{ car.model }}</td>
+      </ng-container>
+
+      <!-- COLOR COLUMN -->
+      <ng-container matColumnDef="color" stickyEnd>
+        <th mat-header-cell *matHeaderCellDef>Color</th>
+        <td mat-cell *matCellDef="let car">{{ car.color }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <ng-template #noCars>
+      <p>No cars in the parking lot</p>
+    </ng-template>
+  </mat-card-content>
+</mat-card>

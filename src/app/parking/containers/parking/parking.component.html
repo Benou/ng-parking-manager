@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">Parking</mat-toolbar>
+
+<div class="parking-lot" *ngIf="(vm$ | async) as vm">
+
+  <!-- CAR FORM -->
+  <div>
+    <app-car-form [pending]="vm.loading"
+                  [succeed]="vm.loaded"
+                  (addCar)="addCarByPlate($event)">
+    </app-car-form>
+  </div>
+
+  <!-- CAR LIST -->
+  <div>
+    <app-car-list [cars]="vm.cars"></app-car-list>
+  </div>
+</div>
